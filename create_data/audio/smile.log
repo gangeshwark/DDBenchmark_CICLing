@@ -1,0 +1,27 @@
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in SMILExtract : openSMILE starting!
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in SMILExtract : config file is: /projects/TensorflowProjects/DeceptionDetection/extract_scripts/audio/opensmile-2.3.0/config/IS13_ComParE.conf
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in cComponentManager : successfully registered 96 component types.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'lldsink' : No filename given, disabling this sink component.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'lldhtksink' : No filename given, disabling this sink component.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'lldarffsink' : No filename given, disabling this sink component.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'csvsink' : No filename given, disabling this sink component.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'htksink' : No filename given, disabling this sink component.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'arffsink' : writing ARFF header (6373 features)...
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in instance 'arffsink' : finished writing ARFF header.
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in cComponentManager : successfully finished createInstances
+                                 (48 component instances were finalised, 1 data memories were finalised)
+[ 02.01.2018 - 16:46:09 ]
+    (MSG) [2] in cComponentManager : starting single thread processing loop
+[ 02.01.2018 - 16:46:13 ]
+    (MSG) [2] in cComponentManager : Processing finished! System ran for 2933 ticks.

@@ -23,10 +23,10 @@ hidden_size = (1024, 512)
 
 # Headline input: meant to receive sequences of 100 integers, between 1 and 10000.
 # Note that we can name any layer by passing it a "name" argument.
-video_input = Input(shape=(video_input_dim,), dtype='int32', name='video_input')
-audio_input = Input(shape=(audio_input_dim,), dtype='int32', name='audio_input')
-text_input = Input(shape=(text_input_dim,), dtype='int32', name='text_input')
-me_input = Input(shape=(gestures_input_dim,), dtype='int32', name='me_input')
+video_input = Input(shape=(video_input_dim,), dtype='float64', name='video_input')
+audio_input = Input(shape=(audio_input_dim,), dtype='float64', name='audio_input')
+text_input = Input(shape=(text_input_dim,), dtype='float64', name='text_input')
+me_input = Input(shape=(gestures_input_dim,), dtype='float64', name='me_input')
 
 x = Concatenate(name='concat_input')([audio_input, video_input, text_input, me_input])
 

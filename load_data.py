@@ -153,7 +153,7 @@ def load():
             X_video_train.append(video_feat[k])
             X_gest_train.append(gesture_feat[k])
             Y_train.append(labels[k])
-            print(k, labels[k])
+            # print(k, labels[k])
         elif k in test_k:
             X_text_test.append(text_feat[k]['features'])
             X_audio_test.append(audio_feat[k]['features'])

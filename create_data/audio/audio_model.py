@@ -106,18 +106,18 @@ input_dim = X_train.shape[1]
 nb_classes = Y_train.shape[1]
 
 model = Sequential()
-model.add(Dense(5000, input_dim=input_dim))
+model.add(Dense(1024, input_dim=input_dim))
 model.add(Activation('tanh'))
 model.add(Dropout(0.5))
 model.add(Dense(1024))
 model.add(Activation('tanh'))
 model.add(Dropout(0.5))
 model.add(Dense(512))
-model.add(Activation('tanh'))
+model.add(Activation('relu'))
 model.add(Dropout(0.5))
 model.add(Dense(300, name='feature_output'))
 model.add(Activation('tanh'))
-# model.add(Dropout(0.5))
+model.add(Dropout(0.5))
 model.add(Dense(nb_classes, activation='softmax'))
 # model.add(Activation('softmax'))
 callbacks = [

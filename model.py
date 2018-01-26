@@ -1,13 +1,19 @@
 import tensorflow as tf
 import numpy as np
 
-import load_data
+import load_data_cv
+import sys
+
+rand = True
 
 np.random.seed(100000)
 # i = int(121 * 0.8)
 # print(i)
 # i = 100
-X_train_text, X_test_text, X_train_audio, X_test_audio, X_train_gest, X_test_gest, X_train_video, X_test_video, Y_train, Y_test = load_data.load()
+k = int(sys.argv[1])
+print("K Fold: ", k)
+X_train_text, X_test_text, X_train_audio, X_test_audio, X_train_gest, X_test_gest, X_train_video, X_test_video, Y_train, Y_test = load_data_cv.load(
+    k, rand)
 
 print(X_train_audio.shape, X_test_audio.shape)
 
@@ -26,7 +32,7 @@ def init_weights(shape):
     return tf.Variable(weights)
 
 
-fusion = 'd'  # c for concat, d for dot
+fusion = 'c'  # c for concat, d for dot
 
 
 def create_model():
@@ -92,7 +98,7 @@ def create_model():
     max_test_epoch = 100
     print("Training...")
 
-    for epoch in range(2000):
+    for epoch in range(500):
         # Train with each example
         losses = []
         for i in range(0, X_train_audio.shape[0], batch_size):

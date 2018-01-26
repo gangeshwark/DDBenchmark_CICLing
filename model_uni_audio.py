@@ -1,13 +1,17 @@
 import tensorflow as tf
 import numpy as np
 
-import load_data
+import load_data_cv
+import sys
 
 np.random.seed(100000)
 # i = int(121 * 0.8)
 # print(i)
 # i = 100
-X_train_text, X_test_text, X_train_audio, X_test_audio, X_train_gest, X_test_gest, X_train_video, X_test_video, Y_train, Y_test = load_data.load()
+k = int(sys.argv[1])
+print("K Fold: ", k)
+X_train_text, X_test_text, X_train_audio, X_test_audio, X_train_gest, X_test_gest, X_train_video, X_test_video, Y_train, Y_test = load_data_cv.load(
+    k)
 
 print(X_train_audio.shape, X_test_audio.shape)
 
@@ -18,6 +22,8 @@ video_input_dim = 300
 gestures_input_dim = 39
 classes = 2
 hidden_size = (1024, 512)
+
+
 # hidden_size = (512, 1024, 1024, 512, 256)
 
 
@@ -34,7 +40,6 @@ def create_model():
     # X_video = tf.placeholder(tf.float32, shape=(None, text_input_dim), name='video_input')
     # X_gest = tf.placeholder(tf.float32, shape=(None, gestures_input_dim), name='gest_input')
     y = tf.placeholder(tf.int32, shape=(None, classes), name='targets')
-
 
     X_audio1 = tf.nn.sigmoid(tf.layers.dense(X_audio, 256))
     # X_text1 = tf.nn.sigmoid(tf.layers.dense(X_text, 256))

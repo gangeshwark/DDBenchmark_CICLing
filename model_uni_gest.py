@@ -1,13 +1,17 @@
 import tensorflow as tf
 import numpy as np
 
-import load_data
+import load_data_cv
+import sys
 
 np.random.seed(100000)
 # i = int(121 * 0.8)
 # print(i)
 # i = 100
-X_train_text, X_test_text, X_train_audio, X_test_audio, X_train_gest, X_test_gest, X_train_video, X_test_video, Y_train, Y_test = load_data.load()
+k = int(sys.argv[1])
+print("K Fold: ", k)
+X_train_text, X_test_text, X_train_audio, X_test_audio, X_train_gest, X_test_gest, X_train_video, X_test_video, Y_train, Y_test = load_data_cv.load(
+    k)
 # X_train_text = X_text[:i]
 # X_test_text = X_text[i:]
 
